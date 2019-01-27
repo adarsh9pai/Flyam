@@ -3,6 +3,7 @@ const AccountSID = process.env.AccountSID
 const AuthToken = process.env.AuthToken
 const TwilioClient = require('twilio')(AccountSID, AuthToken)
 
+/*
 let userDetailsActions = {
         "actions": [
             {
@@ -54,3 +55,25 @@ TwilioClient.autopilot.assistants(process.env.AssistantSID)
     })
     .then(assistant => console.log(assistant.sid))
     .done()
+*/
+
+let registerUserPhrases = ["Create an account","sign up","register my account","register","create user","sign up for account","join account"]
+
+registerUserPhrases.forEach(function(item) {
+    let sample = TwilioClient.autopilot.assistants(process.env.AssistantSID)
+    .tasks('user-details')
+    .samples
+    .create({
+        language: 'en-us',
+        taggedText: item,
+            })
+    .then(sample => console.log(sample.sid))
+    .done()
+})
+
+TwilioClient.autopilot.assistants(process.env.AssistantSID)
+            .modelBuilds
+            .create({uniqueName: 'v0.9.0.5'})
+            .then(model_build => console.log(model_build.sid))
+            .done()
+
