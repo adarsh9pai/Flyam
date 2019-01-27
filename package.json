@@ -1,0 +1,29 @@
+{
+  "name": "flyam",
+  "version": "1.0.0",
+  "description": "Alexa <3 American Airlines",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "babel-node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adarsh9pai/Flyam.git"
+  },
+  "author": "Adarsh Yogesh Pai, Robert Eric Schultz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/adarsh9pai/Flyam/issues"
+  },
+  "homepage": "https://github.com/adarsh9pai/Flyam#readme",
+  "dependencies": {
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "twilio": "^3.27.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1"
+  }
+}
